@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Inter";
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -14,14 +14,17 @@ body {
 .logo {
     font-size: 2rem;
     align-self: center;
-    font-weight: 900;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+    text-wrap: nowrap;
 }
 
 /* header */
 header {
     position: relative;
     padding: 0 3rem;
-    background-color: rgb(201, 226, 240);
+    background-color: #0ee0c4;
+    color: white;
 }
 
 a {
@@ -46,9 +49,19 @@ li {
 
 .navbar li a {
     text-decoration: none;
-    color: black;
     font-size: 1.2rem;
+    color: white;
     font-weight: 500;
+    border: 3px solid white;
+    padding: 0.2rem 1rem;
+    border-radius: 30px;
+    text-wrap: nowrap;
+}
+
+.navbar li a:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease-in-out;
 }
 
 .navbar {
@@ -72,10 +85,11 @@ li {
 .dropdownmenu {
     position: absolute;
     right: 2rem;
+    top: 4.5rem;
     width: 100px;
     height: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #0ee0c4;
     border-radius: 10px;
     overflow: hidden;
     display: none;
@@ -83,7 +97,7 @@ li {
 }
 
 .dropdownmenu.open {
-    height: 240px;
+    height: max-content;
 }
 
 .dropdownmenu li {
@@ -94,7 +108,7 @@ li {
 }
 
 /* responsive */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .navbar .toggle_btn {
         display:block;
     }
@@ -106,4 +120,38 @@ li {
     .dropdownmenu {
         display: block;
     }
+}
+
+/* main */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "main-content-left main-content-right";
+}
+
+.main-content.left {
+    grid-area: main-content-left;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-content.right {
+    grid-area: main-content-right;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content.right a {
+    padding: 1rem 2rem;
+    background-color: rgb(226, 230, 13);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    transition: all 0.3s ease-in-out;
 }
