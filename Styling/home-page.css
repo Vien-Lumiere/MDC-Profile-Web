@@ -163,6 +163,12 @@ li {
     justify-content: center;
 }
 
+.main-content.left h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
 .main-content.right {
     grid-area: main-content-right;
     padding: 2rem;
