@@ -21,8 +21,9 @@ body {
 header {
     position: relative;
     padding: 0 3rem;
-    background-color: #0ee0c4;
+    background-color: rgba(14, 55, 167, 0.562);
     color: white;
+    border-bottom: 5px solid rgb(23, 60, 161);
 }
 a {
     text-decoration: none;
@@ -37,7 +38,7 @@ li {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 60px;
+    height: 100px;
 }
 .navbar ul {
     display: flex;
@@ -138,19 +139,23 @@ li {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-        "main-content-left main-content-right";
+    "main-content-left main-content-right";
 }
 .main-content.left {
     grid-area: main-content-left;
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-left: 7.5rem;
+    display: grid;
+    gap: 1rem;
+    justify-content: left;
 }
 .main-content.left h1 {
-    font-size: 3rem;
+    padding: 0.7rem 0.9rem;
+    font-size: 2rem;
     font-weight: 800;
     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgb(23, 60, 161);
+    color: white;
 }
 .main-content.right {
     grid-area: main-content-right;
