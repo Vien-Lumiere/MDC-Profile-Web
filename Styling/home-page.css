@@ -6,11 +6,9 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
 }
-
 body {
     width: 100%;
 }
-
 .logo {
     font-size: 2rem;
     align-self: center;
@@ -26,12 +24,10 @@ header {
     background-color: #0ee0c4;
     color: white;
 }
-
 a {
     text-decoration: none;
     color: black;
 }
-
 li {
     list-style: none;
 }
@@ -41,12 +37,10 @@ li {
     display: flex;
     align-items: center;
 }
-
 .navbar li {
     display: inline-block;
     margin: 0 2rem;
 }
-
 .navbar li a {
     text-decoration: none;
     font-size: 1.2rem;
@@ -57,20 +51,17 @@ li {
     border-radius: 30px;
     text-wrap: nowrap;
 }
-
 .navbar li a:hover {
     background-color: white;
     color: black;
     transition: all 0.3s ease-in-out;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 60px;
 }
-
 .navbar .toggle_btn {
     display: none;
     scale: 1.5;
@@ -95,19 +86,16 @@ li {
     display: none;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .dropdownmenu.open {
     height: max-content;
     padding: 0.5rem;
 }
-
 .dropdownmenu li {
     padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .dropdownmenu li a::after {
     content: "";
     display: block;
@@ -117,11 +105,9 @@ li {
     border-radius: 10px;
     transition: width 0.3s ease-in-out;
 }
-
 .dropdownmenu li a:hover::after {
     width: 100%;
 }
-
 .dropdownmenu li a {
     padding: 0 1rem;
     border-radius: 10px;
@@ -130,18 +116,14 @@ li {
     color: white;
 }
 
-
-
 /* responsive */
 @media (max-width: 700px) {
     .navbar .toggle_btn {
         display:block;
     }
-
     .navbar ul {
         display: none;
     }
-
     .dropdownmenu {
         display: block;
     }
@@ -154,7 +136,6 @@ li {
     grid-template-areas: 
         "main-content-left main-content-right";
 }
-
 .main-content.left {
     grid-area: main-content-left;
     padding: 2rem;
@@ -162,13 +143,11 @@ li {
     flex-direction: column;
     justify-content: center;
 }
-
 .main-content.left h1 {
     font-size: 3rem;
     font-weight: 800;
     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
-
 .main-content.right {
     grid-area: main-content-right;
     padding: 2rem;
@@ -176,7 +155,6 @@ li {
     justify-content: center;
     align-items: center;
 }
-
 .main-content.right a {
     padding: 1rem 2rem;
     background-color: rgb(226, 230, 13);
