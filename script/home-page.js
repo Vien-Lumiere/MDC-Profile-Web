@@ -75,5 +75,6 @@ let interval = setInterval(() => {
         }
         changeslide();
     }
-}, 100);
+    document.querySelector("li.active hr").style.width = time/2 + "%"
+}, 150);
 
