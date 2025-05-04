@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font: 22px Arial;
+            display: inline-block;
+            padding: 1em 2em;
+            text-align: center;
+            color: white;
+            background: red; /* default color */
+
+            /* "to left" / "to right" - affects initial color */
+            background: linear-gradient(to left, salmon 50%, lightblue 50%) right;
+            background-size: 200%;
+            transition: .5s ease-out;
+        }
+        div:hover {
+            background-position: left;
+        }
+    </style>
+</head>
+<body>
+    <div>Hover me</div>
+</body>
+</html>
