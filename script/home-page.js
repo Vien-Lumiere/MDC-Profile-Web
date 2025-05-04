@@ -36,26 +36,22 @@ function slide1c() {
     timer2.style.width = "0%";
     timer3.style.width = "0%";
 }
-
-    
 function slide2c() {
     slide1.classList.remove('active');
     slide2.classList.add('active');
     slide3.classList.remove('active');
-    h1contentleft.innerHTML = "Welcome kon my website!";
+    h1contentleft.innerHTML = "Welcome to my website!";
     h2contentleft.innerHTML = "I am a web developer.";
     pcontentleft.innerHTML = "I am a web developer with experience in HTML, CSS, and JavaScript. I have worked on various projects and have a strong understanding of web development principles. I am always eager to learn new technologies and improve my skills.";
     timer1.style.width = "100%";
     timer2.style.width = "0%";
     timer3.style.width = "0%";
 }
-
-
 function slide3c() {
     slide1.classList.remove('active');
     slide2.classList.remove('active');
     slide3.classList.add('active');
-    h1contentleft.innerHTML = "Welcome ass my website!";
+    h1contentleft.innerHTML = "Welcome back my website!";
     h2contentleft.innerHTML = "I am a web developer.";
     pcontentleft.innerHTML = "I am a web developer with experience in HTML, CSS, and JavaScript. I have worked on various projects and have a strong understanding of web development principles. I am always eager to learn new technologies and improve my skills.";
     timer1.style.width = "100%";
