@@ -138,8 +138,10 @@ li {
 .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
     grid-template-areas: 
-    "main-content-left main-content-right";
+    "main-content-left main-content-right"
+    "bar bar";
 }
 
 .main-content.left {
@@ -160,33 +162,6 @@ li {
     background-color: rgb(23, 60, 161);
     color: white;
 }
-.main-content.left span {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap : 0.5rem;
-    width: 70%;
-}
-.main-content.left span div {
-    display: inline-block;
-    width: 100%;
-    height: 5px;
-    background: rgba(87, 87, 87, 0.37);
-}
-.main-content.left span div:hover {
-    background-position: left;
-    background: linear-gradient(to left, rgba(87, 87, 87, 0.37) 50%, rgb(216, 216, 0) 50%) right;
-    animation: change 2s ease-out infinite;
-    background-size: 200%;
-}
-
-@keyframes change {
-    0% {
-        background-position: right;
-    }
-    100% {
-        background-position: left;
-    }
-}
 
 .main-content.right {
     grid-area: main-content-right;
@@ -203,4 +178,45 @@ li {
     font-weight: 600;
     color: black;
     transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 700px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "main-content-left"
+        "main-content-right";
+    }
+    .main-content.left {
+        padding: 2rem;
+    }
+    .main-content.right {
+        padding: 2rem;
+    }
+}
+
+.bar {
+    grid-area: bar;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 400px;
+    gap: 0.5rem;
+    margin: 0 7.5rem;
+}
+.bar li {
+    content: '';
+    display: inline-block;
+    width: 125px;
+    height: 5px;
+    background: rgba(87, 87, 87, 0.37);
+}
+
+.bar li hr {
+    height: 5px;
+    background-color: #ffc410;
+    width: 0%;
+    margin: 0px 0px 0px 0px;
+    border: none;
+    z-index: 11;
+    position: relative;
 }
