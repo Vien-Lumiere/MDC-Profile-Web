@@ -59,11 +59,9 @@ function slide3c() {
     timer3.style.width = "0%";
 }
 
-let Timer = document.querySelector('.Timer');
 let time = 0;
 let interval = setInterval(() => {
     time++;
-    Timer.innerHTML = time + "s";
     if (time > 200) {
         function changeslide() {
             if (slide1.classList.contains('active') == true) {
@@ -78,3 +76,4 @@ let interval = setInterval(() => {
         changeslide();
     }
 }, 100);
+
