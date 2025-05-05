@@ -91,10 +91,10 @@ sliderexp.addEventListener('mousedown', (e) => {
     let scrollLeft = sliderexp.scrollLeft;
 
     sliderexp.addEventListener('mousemove', (e) => {
-        if (!isDown) return; // stop the fn from running
+        if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - sliderexp.offsetLeft;
-        const walk = (x - startX) * 2; //scroll-fast
+        const walk = (x - startX) * 2;
         sliderexp.scrollLeft = scrollLeft - walk;
     });
 
@@ -109,12 +109,10 @@ sliderexp.addEventListener('mousedown', (e) => {
 // BUTTONARROW
 const arrowicons = document.querySelectorAll('.carousel i');
 let firstImg = sliderexp.querySelectorAll('.slideritem')[0];
-let firstImgWidth = firstImg.clientWidth + 30; // 14px for padding
+let firstImgWidth = firstImg.clientWidth;
 
 arrowicons.forEach(icon => {
     icon.addEventListener('click', () => {
         sliderexp.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth
-        console.log(icon.id === "left" ? -firstImgWidth : firstImgWidth);
-        console.log(icon);
     });
 });
