@@ -83,36 +83,47 @@ let interval = setInterval(() => {
 }, 150);
 
 // DRAGGABLE
+
 const sliderexp = document.querySelector('.sliderexp');
 
-sliderexp.addEventListener('mousedown', (e) => {
-    let isDown = true;
-    let startX = e.pageX - sliderexp.offsetLeft;
-    let scrollLeft = sliderexp.scrollLeft;
+let isdragstart = false, prevPageX, prevScrollLeft;
 
-    sliderexp.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - sliderexp.offsetLeft;
-        const walk = (x - startX) * 2;
-        sliderexp.scrollLeft = scrollLeft - walk;
-    });
+const dragstart = (e) => {
+    isdragstart = true;
+    prevPageX = e.pageX;
+    prevScrollLeft = sliderexp.scrollLeft;
+}
 
-    sliderexp.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-    sliderexp.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-});
+const dragging = (e) => {
+    if (!isdragstart) return;
+    e.preventDefault();
+    sliderexp.classList.add('dragging');
+    let positiondiff = e.pageX - prevPageX;
+    sliderexp.scrollLeft = prevScrollLeft - positiondiff;
+}
+
+const dragstop = () => {
+    isdragstart = false;
+    sliderexp.classList.remove('dragging');
+}
+
+sliderexp.addEventListener('mousedown', dragstart);
+sliderexp.addEventListener('mousemove', dragging);
+sliderexp.addEventListener('mouseup', dragstop);
 
 // BUTTONARROW
+
 const arrowicons = document.querySelectorAll('.carousel i');
 let firstImg = sliderexp.querySelectorAll('.slideritem')[0];
-let firstImgWidth = firstImg.clientWidth;
+let firstImgWidth = parseFloat(firstImg.clientWidth);
+
+for (let i = 0; i < sliderexp.querySelectorAll('.slideritem').length; i++) {
+    let firstImg = sliderexp.querySelectorAll('.slideritem')[i];
+    firstImgWidth = parseFloat(firstImg.clientWidth);
+}
 
 arrowicons.forEach(icon => {
     icon.addEventListener('click', () => {
-        sliderexp.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth
+        sliderexp.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
     });
 });

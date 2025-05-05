@@ -264,6 +264,7 @@ li hr.timer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     gap: 5px;
     width: 100%;
     padding: 1rem 0;
@@ -272,7 +273,6 @@ li hr.timer {
 .sliderexp {
     display: flex;
     overflow-x: hidden;
-    padding: 1rem 0;
     scroll-behavior: smooth;
     max-width: 75%;
 }
@@ -281,7 +281,7 @@ li hr.timer {
     display: block;
     text-align: center;
     gap: 1rem;
-    padding: 10px 30px;
+    padding: 10px 20px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     color: rgb(0, 0, 0);
@@ -291,15 +291,25 @@ li hr.timer {
 }
 
 .carousel i {
+    top: 50%;
     width: 46px;
     height: 46px;
     line-height: 46px;
+    position: absolute;
     text-align: center;
     color: rgb(0, 0, 0);
     background-color: rgba(187, 187, 187, 0.116);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%);
+}
+
+.carousel i:first-child {
+    left: 8%;
+}
+.carousel i:last-child {
+    right: 8%;
 }
 
 @media (max-width: 900px) {
