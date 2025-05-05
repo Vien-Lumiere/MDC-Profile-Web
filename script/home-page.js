@@ -81,3 +81,40 @@ let interval = setInterval(() => {
     }
     document.querySelector("li.active hr").style.width = time/2 + "%"
 }, 150);
+
+// DRAGGABLE
+const sliderexp = document.querySelector('.sliderexp');
+
+sliderexp.addEventListener('mousedown', (e) => {
+    let isDown = true;
+    let startX = e.pageX - sliderexp.offsetLeft;
+    let scrollLeft = sliderexp.scrollLeft;
+
+    sliderexp.addEventListener('mousemove', (e) => {
+        if (!isDown) return; // stop the fn from running
+        e.preventDefault();
+        const x = e.pageX - sliderexp.offsetLeft;
+        const walk = (x - startX) * 2; //scroll-fast
+        sliderexp.scrollLeft = scrollLeft - walk;
+    });
+
+    sliderexp.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    sliderexp.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+});
+
+// BUTTONARROW
+const arrowicons = document.querySelectorAll('.carousel i');
+let firstImg = sliderexp.querySelectorAll('.slideritem')[0];
+let firstImgWidth = firstImg.clientWidth + 30; // 14px for padding
+
+arrowicons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        sliderexp.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth
+        console.log(icon.id === "left" ? -firstImgWidth : firstImgWidth);
+        console.log(icon);
+    });
+});
