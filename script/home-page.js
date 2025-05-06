@@ -8,7 +8,6 @@ togglebtn.onclick = function () {
     togglebtnicon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
 }
 
-
 // main
 let h1contentleft = document.querySelector('.h1contentleft');
 let h2contentleft = document.querySelector('.h2contentleft');
