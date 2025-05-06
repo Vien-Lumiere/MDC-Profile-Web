@@ -334,47 +334,6 @@ li hr.timer {
 .card-slider.dragging .slideritem {
   pointer-events: none;
 }
-/* .explanation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
-
-
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 5px;
-  width: 100%;
-  padding: 1rem 0;
-}
-
-.sliderexp {
-  display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  cursor: pointer;
-  max-width: 75%;
-}
-
-.sliderexp .slideritem {
-  display: block;
-  text-align: center;
-  gap: 1rem;
-  padding: 10px 0;
-  background-color: rgb(0, 38, 255);
-  border-radius: 20px;
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-  margin-left: 14px;
-  cursor: pointer;
-  min-width: calc(100% / 3);
-} */
-
 
 @media (max-width: 900px) {
   .card-slider .card {
@@ -385,4 +344,53 @@ li hr.timer {
   .card-slider .card {
     min-width: calc(100% / 1);
   }
+}
+
+/* ========= Footer ========== */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "footer-left footer-right";
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.footer-left {
+  grid-area: footer-left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-right {
+  grid-area: footer-right;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  border: 2px solid gray;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+  font-size: 4rem;
+}
+
+.footer-text {
+  font-size: 15px;
+  color: rgb(19, 18, 18);
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rosybrown;
+  width: 75%; 
+}
+
+.footer-text p:nth-child(2) {
+  margin-top: 2rem;
 }
