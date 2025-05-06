@@ -292,6 +292,14 @@ li hr.timer {
   min-width: calc(100% / 3);
 }
 
+.sliderexp.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+.sliderexp.dragging .slideritem {
+  pointer-events: none;
+}
+
 .carousel i {
   top: 50%;
   width: 46px;

@@ -83,14 +83,27 @@ let interval = setInterval(() => {
 }, 150);
 
 // DRAGGABLE
+let isdragstart = false, isDragging = false, prevPageX, prevScrollLeft, positiondiff;
 
 const sliderexp = document.querySelector('.sliderexp');
+let firstImg = sliderexp.querySelectorAll('.slideritem')[0];
+let firstImgWidth = parseFloat(firstImg.clientWidth);
 
-let isdragstart = false, prevPageX, prevScrollLeft;
+const autoSlide = () => {
+    if (sliderexp.scrollLeft === (sliderexp.scrollWidth - sliderexp.clientWidth)) return;
+
+    positiondiff = Math.abs(positiondiff);
+    let valDifference = firstImgWidth - positiondiff;
+
+    if(sliderexp.scrollLeft > prevScrollLeft) {
+        return sliderexp.scrollLeft += positiondiff > firstImgWidth / 3 ? valDifference : -positiondiff;
+    }
+    sliderexp.scrollLeft -= positiondiff > firstImgWidth / 3 ? valDifference : -positiondiff;
+}
 
 const dragstart = (e) => {
     isdragstart = true;
-    prevPageX = e.pageX;
+    prevPageX = e.pageX !== undefined ? e.pageX : e.touches[0].pageX;
     prevScrollLeft = sliderexp.scrollLeft;
 }
 
@@ -98,32 +111,45 @@ const dragging = (e) => {
     if (!isdragstart) return;
     e.preventDefault();
     sliderexp.classList.add('dragging');
-    let positiondiff = e.pageX - prevPageX;
+    isDragging = true;
+    positiondiff = (e.pageX !== undefined ? e.pageX : e.touches[0].pageX) - prevPageX;
     sliderexp.scrollLeft = prevScrollLeft - positiondiff;
+    showhideicons();
 }
 
 const dragstop = () => {
     isdragstart = false;
     sliderexp.classList.remove('dragging');
+
+    if (!isDragging) return;
+    isDragging = false;
+    autoSlide();
 }
 
 sliderexp.addEventListener('mousedown', dragstart);
+sliderexp.addEventListener('touchstart', dragstart);
+
 sliderexp.addEventListener('mousemove', dragging);
+sliderexp.addEventListener('touchmove', dragging);
+
 sliderexp.addEventListener('mouseup', dragstop);
+sliderexp.addEventListener('mouseleave', dragstop);
+sliderexp.addEventListener('touchend', dragstop);
 
 // BUTTONARROW
 
 const arrowicons = document.querySelectorAll('.carousel i');
-let firstImg = sliderexp.querySelectorAll('.slideritem')[0];
-let firstImgWidth = parseFloat(firstImg.clientWidth);
+let scrollWidth = sliderexp.scrollWidth - sliderexp.clientWidth;
 
-for (let i = 0; i < sliderexp.querySelectorAll('.slideritem').length; i++) {
-    let firstImg = sliderexp.querySelectorAll('.slideritem')[i];
-    firstImgWidth = parseFloat(firstImg.clientWidth);
+const showhideicons = () => {
+    arrowicons[0].style.display = sliderexp.scrollLeft === 0 ? "none" : "block";
+    arrowicons[1].style.display = sliderexp.scrollLeft === sliderexp.scrollWidth - sliderexp.clientWidth ? "none" : "block";
 }
 
 arrowicons.forEach(icon => {
     icon.addEventListener('click', () => {
+        let firstImgWidth = parseFloat(firstImg.clientWidth);
         sliderexp.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
+        setTimeout(() => showhideicons(), 60);
     });
 });
