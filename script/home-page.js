@@ -88,16 +88,6 @@ const firstImg = cardslider.querySelectorAll('.card')[0];
 const arrowicons = document.querySelectorAll('.card-wrapper i');
 
 let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
-let slide = document.querySelector('.card-slider').getAttribute('slide-progress');
-let slideIndex = setInterval(() => {
-    if (slide == 1) {
-        slide = 2;
-        cardslider.scrollLeft = -firstImg.clientWidth;
-    } else if (slide == 2) {
-        slide = 1;
-        cardslider.scrollLeft = firstImg.clientWidth;
-    }
-}, 5000);
 
 const showhideicons = () => {
     const scrollWidth = cardslider.scrollWidth - cardslider.clientWidth;
