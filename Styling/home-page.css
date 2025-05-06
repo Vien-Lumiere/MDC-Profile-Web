@@ -367,16 +367,16 @@ li hr.timer {
   margin-left: 14px;
   cursor: pointer;
   min-width: calc(100% / 3);
-}
+} */
 
 
 @media (max-width: 900px) {
-  .sliderexp .slideritem {
+  .card-slider .card {
     min-width: calc(100% / 2);
   }
 }
 @media (max-width: 550px) {
-  .sliderexp .slideritem {
+  .card-slider .card {
     min-width: calc(100% / 1);
   }
-} */
+}

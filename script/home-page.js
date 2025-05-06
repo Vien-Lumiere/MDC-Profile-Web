@@ -93,13 +93,9 @@ let slideIndex = setInterval(() => {
     if (slide == 1) {
         slide = 2;
         cardslider.scrollLeft = -firstImg.clientWidth;
-        arrowicons[0].style.display = "none";
-        arrowicons[1].style.display = "block";
     } else if (slide == 2) {
         slide = 1;
         cardslider.scrollLeft = firstImg.clientWidth;
-        arrowicons[0].style.display = "block";
-        arrowicons[1].style.display = "none";
     }
 }, 5000);
 
@@ -107,15 +103,11 @@ const showhideicons = () => {
     const scrollWidth = cardslider.scrollWidth - cardslider.clientWidth;
 };
 
-arrowicons[0].style.display = "none";
-
 arrowicons.forEach(icon => {
     icon.addEventListener('click', () => {
         const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
         cardslider.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
         slide = icon.id === "left" ? 1 : 2;
-        arrowicons[0].style.display = slide === 1 ? "none" : "block";
-        arrowicons[1].style.display = slide === 2 ? "none" : "block";
         setTimeout(showhideicons, 60);
     });
 });
