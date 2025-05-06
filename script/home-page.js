@@ -88,17 +88,34 @@ const firstImg = cardslider.querySelectorAll('.card')[0];
 const arrowicons = document.querySelectorAll('.card-wrapper i');
 
 let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+let slide = document.querySelector('.card-slider').getAttribute('slide-progress');
+let slideIndex = setInterval(() => {
+    if (slide == 1) {
+        slide = 2;
+        cardslider.scrollLeft = -firstImg.clientWidth;
+        arrowicons[0].style.display = "none";
+        arrowicons[1].style.display = "block";
+    } else if (slide == 2) {
+        slide = 1;
+        cardslider.scrollLeft = firstImg.clientWidth;
+        arrowicons[0].style.display = "block";
+        arrowicons[1].style.display = "none";
+    }
+}, 5000);
 
 const showhideicons = () => {
     const scrollWidth = cardslider.scrollWidth - cardslider.clientWidth;
-    arrowicons[0].style.display = cardslider.scrollLeft === 0 ? "none" : "block";
-    arrowicons[1].style.display = cardslider.scrollLeft >= scrollWidth ? "none" : "block";
 };
+
+arrowicons[0].style.display = "none";
 
 arrowicons.forEach(icon => {
     icon.addEventListener('click', () => {
         const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
         cardslider.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
+        slide = icon.id === "left" ? 1 : 2;
+        arrowicons[0].style.display = slide === 1 ? "none" : "block";
+        arrowicons[1].style.display = slide === 2 ? "none" : "block";
         setTimeout(showhideicons, 60);
     });
 });
@@ -115,39 +132,35 @@ const autoSlide = () => {
     }
 };
 
-const dragStart = (e) => {
-    isDragStart = true;
-    prevPageX = e.pageX || e.touches[0].pageX;
-    prevScrollLeft = cardslider.scrollLeft;
-};
+// const dragStart = (e) => {
+//     isDragStart = true;
+//     prevPageX = e.pageX || e.touches[0].pageX;
+//     prevScrollLeft = cardslider.scrollLeft;
+// };
 
-const dragging = (e) => {
-    if (!isDragStart) return;
-    e.preventDefault();
-    isDragging = true;
-    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-    cardslider.scrollLeft = prevScrollLeft - positionDiff;
-    showhideicons();
-};
+// const dragging = (e) => {
+//     if (!isDragStart) return;
+//     e.preventDefault();
+//     isDragging = true;
+//     positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+//     cardslider.scrollLeft = prevScrollLeft - positionDiff;
+//     showhideicons();
+// };
 
-const dragStop = () => {
-    if (!isDragStart) return;
-    isDragStart = false;
-    cardslider.classList.remove('dragging');
-    if (isDragging) {
-        isDragging = false;
-        autoSlide();
-    }
-};
+// const dragStop = () => {
+//     if (!isDragStart) return;
+//     isDragStart = false;
+//     cardslider.classList.remove('dragging');
+//     if (isDragging) {
+//         isDragging = false;
+//         autoSlide();
+//     }
+// };
 
-cardslider.addEventListener('mousedown', dragStart);
-cardslider.addEventListener('touchstart', dragStart);
-cardslider.addEventListener('mousemove', dragging);
-cardslider.addEventListener('touchmove', dragging);
-cardslider.addEventListener('mouseup', dragStop);
-cardslider.addEventListener('mouseleave', dragStop);
-cardslider.addEventListener('touchend', dragStop);
-
-showhideicons(); // Initial call to set icon visibility
-
-// BUTTONARROW
+// cardslider.addEventListener('mousedown', dragStart);
+// cardslider.addEventListener('touchstart', dragStart);
+// cardslider.addEventListener('mousemove', dragging);
+// cardslider.addEventListener('touchmove', dragging);
+// cardslider.addEventListener('mouseup', dragStop);
+// cardslider.addEventListener('mouseleave', dragStop);
+// cardslider.addEventListener('touchend', dragStop)
