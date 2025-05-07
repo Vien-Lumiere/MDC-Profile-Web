@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styling/design-art-wall-css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">MyWebsite</div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Insight</a></li>
+                <li>
+                    <a href="#">Artwall▾</a>
+                    <div class="dropdown-content">
+                      <a href="Foto.html">Sub Foto</a>
+                      <a href="#">Sub Video</a>
+                      <a href="Desain.html">Sub Desain</a>
+                      <a href="">Sub Program</a>
+                    </div>
+                </li>
+            </ul>  
+        </nav>
+        <center><footer><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, iure.</p></footer></center>
+    </div>
+
+    <div class="Container2">
+        <div class="backgroundproduct">
+            <img src="Gambar/test.jpg" alt="Nama Sub">
+    
+            <footer>
+                <div class="product-catalog">
+                    <div class="product" onclick="bukaModal('modalfoto1')">
+                        <img src="Gambar/test.jpg" alt="Produk 1">
+                        <footer class="description">
+                            <h2>Judul</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                        </footer>
+                    </div>
+                    <div class="product" onclick="bukaModal('modalfoto2')">
+                        <img src="Gambar/test.jpg" alt="Produk 2">
+                        <footer class="description">
+                            <h2>Judul</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+                        </footer>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <div  class="overlay" id="overlay">
+      <div class="modal" id="modalfoto1" style="display:none">
+        <div class="container3">
+            <div class="post-image">
+              <img src="Gambar/p.jpg" alt="Gambar Postingan">
+            </div>
+            <div class="post-details">
+              <div class="close-btn">
+                <img src="" alt="X" onclick="tutupModal()">
+              </div>
+              <div class="post-header">
+                <img src="https://via.placeholder.com/40" alt="Avatar">
+                <strong>username</strong>
+              </div>
+              <div class="caption">
+                <strong>username</strong> <br>
+                Lorem, ipsum. <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                Lorem, ipsum kkkkkk.
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+<script>
+    function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    function bukaModal(id) {
+      document.getElementById('overlay').style.display = 'flex';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function tutupModal() {
+      document.getElementById('overlay').style.display = 'none';
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        modal.style.display = 'none';
+      });
+    }
+ </script>
+    
+</body>
+</html>
