@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    width: 100%;
+  }
+  .logo {
+    font-size: 2rem;
+    align-self: center;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+    text-wrap: nowrap;
+  }
+
+  /* header */
+header {
+    position: relative;
+    padding: 0 3rem;
+    background-color: rgba(58, 75, 160);
+    color: white;
+    border-bottom: 5px solid rgb(14, 55, 167, 0.562);
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  li {
+    list-style: none;
+  }
+  
+  /* navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+  }
+  .navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .navbar li {
+    display: inline-block;
+  }
+  .navbar li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    text-wrap: nowrap;
+  }
+  
+  
+  .navbar li a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out;
+  }
+  .navbar li a:hover::after {
+    width: 100%;
+  }
+  .navbar .toggle_btn {
+    display: none;
+    scale: 1.5;
+    align-self: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font: 800;
+  }
+  
+  /* drop down menu */
+.dropdownmenu {
+    position: absolute;
+    right: 2rem;
+    top: 4.5rem;
+    width: max-content;
+    height: 0;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #0ee0c4;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .dropdownmenu.open {
+    height: max-content;
+    padding: 0.5rem;
+  }
+  .dropdownmenu li {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdownmenu li a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out;
+  }
+  .dropdownmenu li a:hover::after {
+    width: 100%;
+  }
+  .dropdownmenu li a {
+    padding: 0 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+  }
+  
