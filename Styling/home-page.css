@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: rows;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-  font-weight: bolder;
   text-wrap: nowrap;
   color: gold;
 }
@@ -26,7 +25,12 @@ body {
 }
 
 .namelogo #shortlogo {
-  font-size: 2rem;
+  font-size: 30px;
+  line-height: 23px;
+}
+
+.namelogo #longlogo {
+  font-size: 15px;
   line-height: 23px;
 }
 
@@ -34,7 +38,7 @@ body {
 header {
   position: relative;
   padding: 0 0 0 3rem;
-  background-color: rgb(12, 29, 78);
+  background-color: #444A95;
   color: white;
 }
 a {
@@ -50,7 +54,7 @@ li {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 65px;
+  height: 70px;
   align-items: center;
 }
 .navbar ul {
@@ -59,8 +63,8 @@ li {
 }
 .navbar li {
   display: inline-block;
-  line-height: 62px;
-  width: 150px;
+  line-height: 40px;
+  width: 135px;
   text-align: center;
 }
 
@@ -72,13 +76,13 @@ li {
 .navbar li a {
   text-decoration: none;
   font-size: 1.2rem;
-  color: gold;
+  color: #FFDA37;
   font-weight: 500;
   text-wrap: nowrap;
 }
 
 .navbar li:nth-child(n-1) {
-  border-left: 1px solid gold;
+  border-left: 2px solid #FFDA37;
 }
 
 .navbar li a::after {
@@ -170,6 +174,8 @@ li {
 /* main */
 .main-container {
   display: grid;
+  background-image: linear-gradient(to bottom, #ffffff, #444A95);
+  margin: 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 1fr;
   grid-template-areas:
@@ -179,7 +185,6 @@ li {
 
 .main-content.left {
   grid-area: main-content-left;
-  padding: 2rem;
   padding-left: 7.5rem;
   display: flex;
   flex-direction: column;
@@ -242,16 +247,21 @@ li {
 .bar li {
   display: inline-block;
   margin: 1px;
-  width: 123px;
-  height: 5px;
-  background-color: rgba(87, 87, 87, 0.37);
+  width: 250px;
+  height: 7px;
+  opacity: 60%;
+  background-image: linear-gradient(to bottom, #FFFFFF60, #D0EAFF60);
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 li hr.timer {
   border: 0;
-  height: 5px;
+  height: 7px;
   width: 0%;
-  background-color: yellow;
+  opacity: 100%;
+  background-image: linear-gradient(to bottom, #FFFFFF, #D0EAFF);
+  border-radius: 28px;
 }
 
 @media (max-width: 700px) {
