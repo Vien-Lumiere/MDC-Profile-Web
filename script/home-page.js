@@ -9,8 +9,6 @@ togglebtn.onclick = function () {
 }
 
 // main
-let h1contentleft = document.querySelector('.h1contentleft');
-let h2contentleft = document.querySelector('.h2contentleft');
 let pcontentleft = document.querySelector('.pcontentleft');
 
 const slide1 = document.querySelector('[data-slide="1"]');
@@ -24,8 +22,6 @@ slide2.addEventListener('click', slide2c);
 function slide1c() {
     slide1.classList.add('active');
     slide2.classList.remove('active');
-    h1contentleft.innerHTML = "Welcome to MDC";
-    h2contentleft.innerHTML = "Mantsani Digital Creative";
     pcontentleft.innerHTML = "This is the main content area.";
     timer1.style.width = "0%";
     timer2.style.width = "0%";
@@ -33,8 +29,6 @@ function slide1c() {
 function slide2c() {
     slide1.classList.remove('active');
     slide2.classList.add('active');
-    h1contentleft.innerHTML = "Welcome to my website!";
-    h2contentleft.innerHTML = "I am a web developer.";
     pcontentleft.innerHTML = "I am a web developer with experience in HTML, CSS, and JavaScript. I have worked on various projects and have a strong understanding of web development principles. I am always eager to learn new technologies and improve my skills.";
     timer1.style.width = "100%";
     timer2.style.width = "0%";
