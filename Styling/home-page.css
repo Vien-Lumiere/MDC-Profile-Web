@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -8,6 +8,7 @@
 }
 body {
   width: 100%;
+  color-scheme: dark;
 }
 .logo {
   display: flex;
@@ -175,7 +176,9 @@ li {
 .main-container {
   display: grid;
   background-image: linear-gradient(to bottom, #ffffff, #444A95);
-  margin: 2rem;
+  border-radius: 30px;
+  padding: 4rem 2rem;
+  margin: 2rem 4rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 1fr;
   grid-template-areas:
@@ -209,13 +212,18 @@ li {
 }
 
 .main-content.left h1 {
+  display: flex;
   width: fit-content;
-  padding: 0.7rem 0.9rem;
-  font-size: 2rem;
-  font-weight: 800;
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-  background-color: rgb(23, 60, 161);
-  color: white;
+  padding: 0 30px 0 30px;
+  line-height: 100%;
+  font-family: 'montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 7rem;
+  width: fit-content;
+  background-image: linear-gradient(to right, #FFDB3E, #ffd000);
+  border-radius: 20px;
+  opacity: 50%;
+  color: #4048C0;
 }
 
 .main-content.right {
@@ -264,7 +272,7 @@ li hr.timer {
   border-radius: 28px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   .main-container {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -273,10 +281,10 @@ li hr.timer {
       "main-content-right";
   }
   .bar {
-    margin: 0 1rem;
+    margin: 0 2rem;
   }
   .bar li {
-    width: 75px;
+    width: 150px;
   }
   .main-content.left {
     padding: 2rem;
