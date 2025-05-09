@@ -51,8 +51,6 @@ let interval = setInterval(() => {
             if (slide1.classList.contains('active') == true) {
                 slide2c();
             } else if (slide2.classList.contains('active') == true) {
-                slide3c();
-            } else if (slide3.classList.contains('active') == true) {
                 slide1c();
             }
             time = 0;

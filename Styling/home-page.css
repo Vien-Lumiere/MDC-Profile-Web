@@ -33,7 +33,7 @@ body {
 /* header */
 header {
   position: relative;
-  padding: 0 3rem;
+  padding: 0 0 0 3rem;
   background-color: rgb(12, 29, 78);
   color: white;
 }
@@ -59,8 +59,6 @@ li {
 }
 .navbar li {
   display: inline-block;
-  border-left: 2px solid gold;
-  border-right: 2px solid gold;
   padding: 0 2rem;
   line-height: 97px;
 }
@@ -76,6 +74,16 @@ li {
   color: gold;
   font-weight: 500;
   text-wrap: nowrap;
+}
+
+.navbar li:nth-child(n+1) {
+  border-right: 2px solid gold;
+}
+.navbar li:nth-child(3) {
+  border: none;
+}
+.navbar li:nth-child(1) {
+  border-left: 2px solid gold;
 }
 
 .navbar li a::after {
