@@ -265,7 +265,7 @@ li hr.timer {
   height: 7px;
   width: 0%;
   opacity: 100%;
-  background-image: linear-gradient(to bottom, #FFFFFF, #D0EAFF);
+  background-image: linear-gradient(to bottom, #FFFFFF 40%, #8f8f8f 100%);
   border-radius: 28px;
 }
 
@@ -307,6 +307,7 @@ li hr.timer {
 
 .main-explanation {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   background-color: #013880;
@@ -314,10 +315,9 @@ li hr.timer {
   padding: 60px;
 }
 
-.main-explanation::after {
-  content: "";
+.curvebox {
   display: block;
-  height: 10px;
+  height: 100px;
   background-color: white;
   width: 100%;
 }
