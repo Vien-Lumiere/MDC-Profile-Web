@@ -301,16 +301,45 @@ li hr.timer {
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 2rem;
 }
 
-.titleexp {
-  text-align: center;
-  font-size: 3.5rem;
-  font-weight: 700;
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-  color: rgb(0, 0, 0);
-  padding: 1rem;
+/* ========== MAIN EXPLANATION ========== */
+
+.main-explanation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #013880;
+  padding: 60px;
+}
+
+.main-explanation .aboutmdc {
+  display: flex;
+  flex: 1;
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  border-radius: 30px;
+  box-shadow: 0 0 50px pink;
+  align-items: end;
+}
+
+.main-container .mdcrobot {
+  display: flex;
+  flex: 1;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+}
+
+.main-explanation .lookart {
+  display: flex;
+  flex: 1;
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  border-radius: 30px;
+  box-shadow: 0 0 50px pink;
 }
 
 .card-wrapper i {
