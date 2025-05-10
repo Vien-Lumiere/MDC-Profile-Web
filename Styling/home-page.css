@@ -299,7 +299,6 @@ li hr.timer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   width: 100%;
 }
 
@@ -314,14 +313,6 @@ li hr.timer {
   gap: 3rem;
   padding: 60px;
 }
-
-.curvebox {
-  display: block;
-  height: 100px;
-  background-color: white;
-  width: 100%;
-}
-
 .main-explanation .aboutmdc {
   display: flex;
   flex: 1;
@@ -332,7 +323,6 @@ li hr.timer {
   box-shadow: 0 0 50px pink;
   align-items: end;
 }
-
 .main-explanation .mdcrobot {
   display: flex;
   flex: 1;
@@ -340,7 +330,6 @@ li hr.timer {
   height: 400px;
   background-color: white;
 }
-
 .main-explanation .lookart {
   display: flex;
   flex: 1;
@@ -351,6 +340,22 @@ li hr.timer {
   box-shadow: 0 0 50px pink;
 }
 
+/* ========== CURVEBOX ========== */
+.containercurvebox {
+  display: flex;
+  background-color: #013880;
+  width: 100%;
+}
+
+.curvebox {
+  display: flex;
+  height: 50px;
+  background-color: white;
+  width: 100%;
+  border-radius: 100px 100px 0 0;
+}
+
+/* ========== CARD WRAPPER ========== */
 .card-wrapper i {
   top: 50%;
   width: 46px;
