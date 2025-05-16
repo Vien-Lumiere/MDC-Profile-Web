@@ -34,6 +34,23 @@ function slide2c() {
     timer2.style.width = "0%";
 }
 
+let time = 0;
+let interval = setInterval(() => {
+    time++;
+    if (time > 200) {
+        function changeslide() {
+            if (slide1.classList.contains('active') == true) {
+                slide2c();
+            } else if (slide2.classList.contains('active') == true) {
+                slide1c();
+            }
+            time = 0;
+        }
+        changeslide();
+    }
+    document.querySelector("li.active hr").style.width = time/2 + "%"
+}, 150);
+
 document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.swiper', {
         loop: true,
@@ -64,22 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // const leftArrow = document.querySelector('.fa-angle-left');
 // const rightArrow = document.querySelector('.fa-angle-right');
 
-// let time = 0;
-// let interval = setInterval(() => {
-//     time++;
-//     if (time > 200) {
-//         function changeslide() {
-//             if (slide1.classList.contains('active') == true) {
-//                 slide2c();
-//             } else if (slide2.classList.contains('active') == true) {
-//                 slide1c();
-//             }
-//             time = 0;
-//         }
-//         changeslide();
-//     }
-//     document.querySelector("li.active hr").style.width = time/2 + "%"
-// }, 150);
 
 // // DRAGGABLE
 // const cardslider = document.querySelector('.card-slider');
