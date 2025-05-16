@@ -35,7 +35,7 @@ function slide2c() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.swiper', {
+    new Swiper('.swiper', {
         loop: true,
         spaceBetween: 30,
         pagination: {
