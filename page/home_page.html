@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Style/home-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <div class="container">
@@ -76,24 +77,24 @@
             </div>
             <div class="card-wrapper">
                 <i id="left" class="fa-solid fa-angle-left"></i>
-                <div class="card-slider" slide-progress="1">
-                    <div class="card" slide="1" draggable="false">
+                <ul class="card-list">
+                    <li class="card-item" slide="1" draggable="false">
                         <h2>FOTOGRAFI</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
-                    </div>
-                    <div class="card" slide="2" draggable="false">
+                    </li>
+                    <li class="card-item" slide="2" draggable="false">
                         <h2>VIDEOGRAFI</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
-                    </div>
-                    <div class="card" slide="3" draggable="false">
+                    </li>
+                    <li class="card-item" slide="3" draggable="false">
                         <h2>DESAIN</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
-                    </div>
-                    <div class="card" slide="4" draggable="false">
+                    </li>
+                    <li class="card-item" slide="4" draggable="false">
                         <h2>PROGRAM</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <i id="right" class="fa-solid fa-angle-right"></i>
             </div>
         </div>
@@ -138,5 +139,6 @@
     </div>
 
     <script src="../script/home-page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
