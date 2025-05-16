@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../Styling/home-page.css">
+    <link rel="stylesheet" href="../Style/home-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
 </head>
@@ -14,7 +14,13 @@
         <!-- NAVBAR -->
         <header>
             <nav class="navbar">
-                <div class="logo">MDC<img src="" alt=""> <a href="home_page.html"></a></div>
+                <a class="logo" href="home_page.html">
+                    <img src="" alt="">
+                    <div class="namelogo">
+                        <h1 id="shortlogo">MDC</h1>
+                        <p id="longlogo">Mantsani Digital Creative</p>
+                    </div>
+                </a>
                 <ul class="nav-links">
                     <li><a href="home_page.html">Home</a></li>
                     <li><a href="insight1.html">Insight</a></li>
@@ -35,8 +41,7 @@
         <!-- MAINCONTENT -->
         <div class="main-container">
             <div class="main-content left">
-                <h1 class="h1contentleft">Welcome to MDC</h1>
-                <h2 class="h2contentleft">Mantsani Digital Creative</h2>
+                <h1 class="h1contentleft">MDC</h1>
                 <p class="pcontentleft">This is the main content area.</p>
             </div>
             <div class="main-content right">
@@ -49,16 +54,26 @@
                 <li class="" data-slide="2">
                     <hr class="timer">
                 </li>
-                <li class="" data-slide="3">
-                    <hr class="timer">
-                </li>
             </ol>
         </div>
         <!-- END MAINCONTENT -->
         
         <!-- EXPLANATION -->
         <div class="explanation">
-            <h1 class="titleexp">MDC</h1>
+            <div class="main-explanation">
+                <div class="aboutmdc">
+                    <h1>Tentang MDC</h1>
+                </div>
+                <div class="mdcrobot">
+                    <img src="" alt="">
+                </div>
+                <div class="lookart">
+                    <h1>Lihat Karya</h1>
+                </div>
+            </div>
+            <div class="containercurvebox">
+                <div class="curvebox"></div>
+            </div>
             <div class="card-wrapper">
                 <i id="left" class="fa-solid fa-angle-left"></i>
                 <div class="card-slider" slide-progress="1">
@@ -81,28 +96,41 @@
                 </div>
                 <i id="right" class="fa-solid fa-angle-right"></i>
             </div>
+        </div>
         <!-- END EXPLANATION -->
         <!-- FOOTER -->
         <footer>
             <div class="footer-content">
                 <div class="footer-left">
-                    <div class="social-media">
+                    <div class="footerlogo">
+                        <img src="" alt="">
+                        <p>Mantsani Digital Creative</p>
+                    </div>
+                    <p id="schoolname">MAN 2 Kota Kediri - Kediri</p>
+                    <p id="schoolemail">Email : mantsanidigitalcreative@gmail.com</p>
+                    <p id="schoolphone">Phone : </p>
+                    <p>Find us on social media</p>
+                    <div id="findsocialmedia">
                         <a href="https://www.instagram.com/mantsanidigitalcreative?igsh=MWhhOTI3MHd2eWVnaQ==" target="_blank"><i class="ri-instagram-fill"></i></a>
                         <a href="https://www.youtube.com/@mdcmansani" target="_blank"><i class="ri-youtube-fill"></i></a>
                         <a href="https://www.tiktok.com/@mantsanidigitalcreative?_t=ZS-8w8ss9QqZs8&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
-                    <div class="footer-text">
-                        <p>Copyright &copy; 2017 MAN 2 Kota Kediri. All rights reserved.</p>
-                        <p>MAN 2 Kota Kediri</p>
-                        <p>Jalan Letnan Jenderal Suprapto No.58 Kota Kediri, Jawa</p>
-                        <p>TImur 64124</p>
-                        <p>Telepon: (0354) 687876</p>
-                    </div>ttps:/
                 </div>
                 <div class="footer-right">
-                    <div class="footer-address">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1175.1504347720916!2d112.02585683343604!3d-7.819540126072517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78576dcdadf553%3A0x42430ab4a98cad12!2sMAN%202%20Kota%20Kediri!5e0!3m2!1sid!2suk!4v1746537290180!5m2!1sid!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                    <p>Google Maps Kami</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1175.1504347720916!2d112.02585683343604!3d-7.819540126072517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78576dcdadf553%3A0x42430ab4a98cad12!2sMAN%202%20Kota%20Kediri!5e0!3m2!1sid!2suk!4v1746537290180!5m2!1sid!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>Profil | Ekstrakurikuler | Berita | Kontak</p>
+                    <p>Copyright &copy; 2025 Mantsani Digital Creative</p>
+                    <p>rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>MAN 2 Kota Kediri</p>
+                    <p>Jalan Letnan Jendral Suprapto No.58 Kota Kediri,</p>
+                    <p>Jawa Timur 64124</p>
                 </div>
             </div>
         </footer>
