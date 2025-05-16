@@ -1,0 +1,97 @@
+* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: 100%;
+  color-scheme: dark;
+}
+.logo {
+  display: flex;
+  flex-direction: rows;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+  text-wrap: nowrap;
+  color: gold;
+}
+
+.namelogo {
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.namelogo #shortlogo {
+  font-size: 30px;
+  line-height: 23px;
+}
+
+.namelogo #longlogo {
+  font-size: 15px;
+  line-height: 23px;
+}
+
+/* header */
+header {
+  position: relative;
+  padding: 0 1rem;
+  background-color: #444A95;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+.navbar li {
+  display: inline-block;
+  line-height: 50px;
+  width: 135px;
+  text-align: center;
+}
+
+.navbar .logo{
+  cursor: pointer;
+  display: flex;
+
+}
+.navbar li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #FFDA37;
+  font-weight: 500;
+  text-wrap: nowrap;
+  font-family: "Inter", sans-serif;
+}
+
+.navbar li:nth-child(n-1) {
+  border-left: 2px solid #FFDA37;
+}
+.navbar .toggle_btn {
+  display: none;
+  scale: 1.5;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font: 800;
+}
+
+  
