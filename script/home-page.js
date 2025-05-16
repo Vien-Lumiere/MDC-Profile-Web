@@ -34,87 +34,67 @@ function slide2c() {
     timer2.style.width = "0%";
 }
 
-const leftArrow = document.querySelector('.fa-angle-left');
-const rightArrow = document.querySelector('.fa-angle-right');
+new Swiper('.card-wrapper', {
+    loop: true,
+    direction: 'horizontal',
 
-let time = 0;
-let interval = setInterval(() => {
-    time++;
-    if (time > 200) {
-        function changeslide() {
-            if (slide1.classList.contains('active') == true) {
-                slide2c();
-            } else if (slide2.classList.contains('active') == true) {
-                slide1c();
-            }
-            time = 0;
-        }
-        changeslide();
-    }
-    document.querySelector("li.active hr").style.width = time/2 + "%"
-}, 150);
-
-// DRAGGABLE
-const cardslider = document.querySelector('.card-slider');
-const firstImg = cardslider.querySelectorAll('.card')[0];
-const arrowicons = document.querySelectorAll('.card-wrapper i');
-
-let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
-
-const showhideicons = () => {
-    const scrollWidth = cardslider.scrollWidth - cardslider.clientWidth;
-};
-
-arrowicons.forEach(icon => {
-    icon.addEventListener('click', () => {
-        const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
-        cardslider.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
-        slide = icon.id === "left" ? 1 : 2;
-        setTimeout(showhideicons, 60);
-    });
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
+// SLIDE FUNCTION
+// const leftArrow = document.querySelector('.fa-angle-left');
+// const rightArrow = document.querySelector('.fa-angle-right');
 
-const autoSlide = () => {
-    const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
-    positionDiff = Math.abs(positionDiff);
-    const valDifference = firstImgWidth - positionDiff;
+// let time = 0;
+// let interval = setInterval(() => {
+//     time++;
+//     if (time > 200) {
+//         function changeslide() {
+//             if (slide1.classList.contains('active') == true) {
+//                 slide2c();
+//             } else if (slide2.classList.contains('active') == true) {
+//                 slide1c();
+//             }
+//             time = 0;
+//         }
+//         changeslide();
+//     }
+//     document.querySelector("li.active hr").style.width = time/2 + "%"
+// }, 150);
 
-    if (cardslider.scrollLeft > prevScrollLeft) {
-        cardslider.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-    } else {
-        cardslider.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-    }
-};
+// // DRAGGABLE
+// const cardslider = document.querySelector('.card-slider');
+// const firstImg = cardslider.querySelectorAll('.card')[0];
+// const arrowicons = document.querySelectorAll('.card-wrapper i');
 
-// const dragStart = (e) => {
-//     isDragStart = true;
-//     prevPageX = e.pageX || e.touches[0].pageX;
-//     prevScrollLeft = cardslider.scrollLeft;
+// let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+// const showhideicons = () => {
+//     const scrollWidth = cardslider.scrollWidth - cardslider.clientWidth;
 // };
 
-// const dragging = (e) => {
-//     if (!isDragStart) return;
-//     e.preventDefault();
-//     isDragging = true;
-//     positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-//     cardslider.scrollLeft = prevScrollLeft - positionDiff;
-//     showhideicons();
-// };
+// arrowicons.forEach(icon => {
+//     icon.addEventListener('click', () => {
+//         const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
+//         cardslider.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
+//         slide = icon.id === "left" ? 1 : 2;
+//         setTimeout(showhideicons, 60);
+//     });
+// });
 
-// const dragStop = () => {
-//     if (!isDragStart) return;
-//     isDragStart = false;
-//     cardslider.classList.remove('dragging');
-//     if (isDragging) {
-//         isDragging = false;
-//         autoSlide();
+// const autoSlide = () => {
+//     const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
+//     positionDiff = Math.abs(positionDiff);
+//     const valDifference = firstImgWidth - positionDiff;
+
+//     if (cardslider.scrollLeft > prevScrollLeft) {
+//         cardslider.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+//     } else {
+//         cardslider.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
 //     }
 // };
-
-// cardslider.addEventListener('mousedown', dragStart);
-// cardslider.addEventListener('touchstart', dragStart);
-// cardslider.addEventListener('mousemove', dragging);
-// cardslider.addEventListener('touchmove', dragging);
-// cardslider.addEventListener('mouseup', dragStop);
-// cardslider.addEventListener('mouseleave', dragStop);
-// cardslider.addEventListener('touchend', dragStop)
