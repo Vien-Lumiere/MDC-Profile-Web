@@ -534,7 +534,14 @@ li hr.timer {
     padding: 30px 0 !important;
   }
 }
-
+/* ========= SUBEXPLAIN ========== */
+.containersub {
+  display: flex;
+  margin: 50px;
+  padding: 0 30px;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #444A95 350%);
+  border-radius: 30px;
+}
 
 /* ========= Footer ========== */
 footer {
