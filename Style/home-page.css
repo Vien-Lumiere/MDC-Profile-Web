@@ -10,32 +10,7 @@ body {
   width: 100%;
   color-scheme: dark;
 }
-.logo {
-  display: flex;
-  flex-direction: rows;
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-  text-wrap: nowrap;
-  color: gold;
-}
-
-.namelogo {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-}
-
-.namelogo #shortlogo {
-  font-size: 30px;
-  line-height: 23px;
-}
-
-.namelogo #longlogo {
-  font-size: 15px;
-  line-height: 23px;
-}
-
-/* header */
+/* ========== HEADER ========== */
 header {
   top: 0;
   position: sticky;
@@ -52,7 +27,7 @@ li {
   list-style: none;
 }
 
-/* navbar */
+/* ========== NAVBAR ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -71,10 +46,33 @@ li {
   text-align: center;
   justify-content: center;
 }
-
 .navbar .logo {
   cursor: pointer;
   display: flex;
+}
+.logo {
+  display: flex;
+  flex-direction: rows;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+  text-wrap: nowrap;
+  color: gold;
+  align-items: center;
+  height: 50px;
+  gap: 0.6rem;
+}
+.namelogo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.namelogo #shortlogo {
+  font-size: 30px;
+  line-height: 23px;
+}
+.namelogo #longlogo {
+  font-size: 15px;
+  line-height: 15px;
 }
 .navbar li a {
   text-decoration: none;
@@ -84,7 +82,6 @@ li {
   text-wrap: nowrap;
   font-family: "Inter", sans-serif;
 }
-
 .navbar li a::after {
   content: "";
   display: block;
@@ -106,19 +103,59 @@ li {
 }
 .navbar .toggle_btn {
   display: none;
-  scale: 1.5;
-  align-self: center;
-  background-color: transparent;
-  border: none;
+  width: 35px;
+  height: 25px;
+  position: relative;
+  transform: rotate(0);
+  transition: .3s ease-in-out;
   cursor: pointer;
-  font: 800;
 }
 
-/* drop down menu */
+.toggle_btn span{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #ffda37;
+  border-radius: 7px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0);
+  transition: .3s ease-in-out;
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 0;
+  transform-origin: left center;
+}
+.toggle_btn span:nth-child(2) {
+  top: 10px;
+  transform-origin: left center;
+}
+.toggle_btn span:nth-child(3) {
+  top: 20px;
+  transform-origin: left center;
+}
+
+.toggle_btn.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: -3px;
+  left: 7px;
+}
+.toggle_btn.active span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+.toggle_btn.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 7px;
+}
+/* ========== DROPDOWN MENU ========== */
 .dropdownmenu {
   position: absolute;
   right: 0;
-  top: 3rem;
+  top: 64px;
   width: max-content;
   height: 0;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
@@ -147,9 +184,10 @@ li {
   display: block;
   width: 0%;
   height: 2px;
-  background-color: white;
+  background-color: #ffda37;
+  margin: 0 auto;
   border-radius: 10px;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.2s ease-in-out;
 }
 .dropdownmenu li a:hover::after {
   width: 100%;
@@ -162,10 +200,10 @@ li {
   color: #ffda37;
 }
 
-/* responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 700px) {
   .navbar {
-    height: 3rem;
+    height: 4rem;
   }
   .navbar .toggle_btn {
     display: block;
@@ -178,7 +216,7 @@ li {
   }
 }
 
-/* main */
+/* ========== MAIN ========== */
 .main-container {
   display: grid;
   background-image: linear-gradient(to bottom, #ffffff 0%, #444a95 250%);
@@ -186,12 +224,11 @@ li {
   padding: 4rem 3rem 2rem 3rem;
   margin: 2rem 4rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 10fr 1fr;
   grid-template-areas:
     "main-content-left main-content-right"
     "bar bar";
 }
-
 .main-content.left {
   grid-area: main-content-left;
   display: flex;
@@ -199,23 +236,14 @@ li {
   gap: 1rem;
   justify-content: left;
 }
-
-.animate-fadeIn > * {
-  animation: fadeIn 0.5s ease-in-out forwards;
+.main-content.left{
+  animation: fadeIn-left 0.5s ease-in-out forwards;
   animation-fill-mode: forwards;
 }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-fadeIn > * {
+  animation: fadeIn-left 0.5s ease-in-out forwards;
+  animation-fill-mode: forwards;
 }
-
 .main-content.left h1 {
   display: flex;
   width: fit-content;
@@ -231,7 +259,6 @@ li {
   color: #4048c0;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
-
 .main-content.left p {
   font-size: 1.5rem;
   word-wrap: wrap;
@@ -241,12 +268,17 @@ li {
   padding: 0 38px;
   margin: 0 0 2rem 0;
 }
-
 .main-content.right {
   grid-area: main-content-right;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn-right 0.5s ease-in-out forwards;
+  animation-fill-mode: forwards;
+}
+.main-content.right.animate-fadeIn img{
+  animation: fadeIn-right 0.5s ease-in-out forwards;
+  animation-fill-mode: forwards;
 }
 .main-content.right a {
   padding: 1rem 2rem;
@@ -257,11 +289,31 @@ li {
   color: black;
   transition: all 0.3s ease-in-out;
 }
+@keyframes fadeIn-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
+@keyframes fadeIn-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .bar {
   grid-area: bar;
   display: block;
-  height: 28px;
+  height: 7px;
   width: fit-content;
   gap: 0.5rem;
 }
@@ -314,7 +366,7 @@ li hr.timer {
   }
 }
 
-/* EXPLANATION PAGE */
+/* ========== EXPLANATION PAGE ========== */
 
 .explanation {
   display: flex;
@@ -329,18 +381,18 @@ li hr.timer {
 .main-explanation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
   width: 100%;
   background-color: #013880;
-  gap: 3rem;
-  padding: 60px;
+  gap: 10px;
+  padding: 0 60px 60px 60px;
 }
 .main-explanation .aboutmdc {
   display: flex;
   flex: 1;
   background-color: white;
   height: 400px;
-  width: 400px;
+  margin-top: 60px;
   border-radius: 30px;
   box-shadow: 0 0 50px pink;
   align-items: end;
@@ -350,14 +402,15 @@ li hr.timer {
   flex: 1;
   width: 100%;
   height: 400px;
-  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 .main-explanation .lookart {
   display: flex;
   flex: 1;
   background-color: white;
   height: 400px;
-  width: 400px;
+  margin-top: 60px;
   border-radius: 30px;
   box-shadow: 0 0 50px pink;
 }
@@ -380,10 +433,9 @@ li hr.timer {
 /* ========== CARD WRAPPER ========== */
 .swiper {
   max-width: 1200px;
-  padding: 40px 0 !important;
+  padding: 70px 0 !important;
   background-color: #ffffff;
   border-radius: 14px;
-  /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
   position: relative;
   overflow: visible;
   justify-self: center;
@@ -477,6 +529,9 @@ li hr.timer {
   transform: scale(1) translateY(0px) !important;
   transition: transform 0.3s ease;
   z-index: 10;
+  }
+  .swiper {
+    padding: 30px 0 !important;
   }
 }
 

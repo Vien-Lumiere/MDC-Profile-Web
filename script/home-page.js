@@ -3,10 +3,20 @@ const togglebtnicon = document.querySelector('.toggle_btn i');
 const dropdownmenu = document.querySelector('.dropdownmenu');
 
 togglebtn.onclick = function () {
+    togglebtn.classList.toggle('active');
     dropdownmenu.classList.toggle('open');
-    const isOpen = dropdownmenu.classList.contains('open');
-    togglebtnicon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-}
+};
+
+document.addEventListener('mousedown', function(event) {
+    if (
+        dropdownmenu.classList.contains('open') &&
+        !dropdownmenu.contains(event.target) &&
+        !togglebtn.contains(event.target)
+    ) {
+        dropdownmenu.classList.remove('open');
+        togglebtn.classList.remove('active'); // Make toggle button not active
+    }
+});
 
 // main
 let pcontentleft = document.querySelector('.pcontentleft');
@@ -15,6 +25,7 @@ const slide1 = document.querySelector('[data-slide="1"]');
 const slide2 = document.querySelector('[data-slide="2"]');
 const timer1 = document.querySelector('li[data-slide="1"] hr.timer');
 const timer2 = document.querySelector('li[data-slide="2"] hr.timer');
+let imagemain = document.querySelector('.imagemain')
 
 slide1.addEventListener('click', slide1c);
 slide2.addEventListener('click', slide2c);
@@ -25,7 +36,9 @@ function slide1c() {
     pcontentleft.innerHTML = "This is the main content area.";
     timer1.style.width = "0%";
     timer2.style.width = "0%";
+    imagemain.src = "../assets/mdc_logo_big.svg";
     animateMainContentLeft();
+    animateMainContentRight();
 }
 function slide2c() {
     slide1.classList.remove('active');
@@ -33,7 +46,9 @@ function slide2c() {
     pcontentleft.innerHTML = "I am a web developer with experience in HTML, CSS, and JavaScript. I have worked on various projects and have a strong understanding of web development principles. I am always eager to learn new technologies and improve my skills.";
     timer1.style.width = "100%";
     timer2.style.width = "0%";
+    imagemain.src = "../assets/mozi_logo.svg";
     animateMainContentLeft();
+    animateMainContentRight();
 }
 
 function animateMainContentLeft() {
@@ -43,6 +58,14 @@ function animateMainContentLeft() {
     // Trigger reflow to restart animation
     void mainContentLeft.offsetWidth;
     mainContentLeft.classList.add('animate-fadeIn');
+}
+function animateMainContentRight() {
+    const mainContentRight = document.querySelector('.main-content.right');
+    if (!mainContentRight) return;
+    mainContentRight.classList.remove('animate-fadeIn');
+    // Trigger reflow to restart animation
+    void mainContentRight.offsetWidth;
+    mainContentRight.classList.add('animate-fadeIn');
 }
 
 let time = 0;
