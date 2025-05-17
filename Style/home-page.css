@@ -42,7 +42,7 @@ header {
   padding: 0 1rem;
   background-color: #444a95;
   color: white;
-  z-index: 1;
+  z-index: 100;
 }
 a {
   text-decoration: none;
@@ -363,14 +363,15 @@ li hr.timer {
 /* ========== CARD WRAPPER ========== */
 .swiper {
   max-width: 1200px;
-  padding: 20px 0;
-  background-color: #fff;
+  padding: 40px 0 !important;
+  background-color: #ffffff;
   border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
   position: relative;
   overflow: visible;
   justify-self: center;
   margin: 40px;
+  z-index: 1;
 }
 
 .swiper-wrapper {
@@ -380,10 +381,10 @@ li hr.timer {
 .swiper-slide {
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
   padding: 24px;
   box-sizing: border-box;
-  user-select: none;
+  /* user-select: none; */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -392,8 +393,12 @@ li hr.timer {
   text-align: center;
 }
 .swiper-slide:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  transform: translateY(-20px) !important;
+  /* box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18); */
+}
+.swiper-slide:active {
+  cursor: grabbing;
+  transform: translateY(100px);
 }
 .swiper-slide h2 {
   margin: 0 0 12px;
