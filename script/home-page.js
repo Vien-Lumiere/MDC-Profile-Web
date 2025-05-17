@@ -25,6 +25,7 @@ function slide1c() {
     pcontentleft.innerHTML = "This is the main content area.";
     timer1.style.width = "0%";
     timer2.style.width = "0%";
+    animateMainContentLeft();
 }
 function slide2c() {
     slide1.classList.remove('active');
@@ -32,6 +33,16 @@ function slide2c() {
     pcontentleft.innerHTML = "I am a web developer with experience in HTML, CSS, and JavaScript. I have worked on various projects and have a strong understanding of web development principles. I am always eager to learn new technologies and improve my skills.";
     timer1.style.width = "100%";
     timer2.style.width = "0%";
+    animateMainContentLeft();
+}
+
+function animateMainContentLeft() {
+    const mainContentLeft = document.querySelector('.main-content.left');
+    if (!mainContentLeft) return;
+    mainContentLeft.classList.remove('animate-fadeIn');
+    // Trigger reflow to restart animation
+    void mainContentLeft.offsetWidth;
+    mainContentLeft.classList.add('animate-fadeIn');
 }
 
 let time = 0;
