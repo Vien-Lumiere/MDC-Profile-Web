@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mantsani Digital Creative - Home</title>
+    <meta name="description" content="Welcome to Mantsani Digital Creative, showcasing photography, videography, design, and programming projects. Explore our creative works and insights.">
     <link rel="stylesheet" href="../Style/home-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -13,103 +14,117 @@
     <div class="container">
 
         <!-- NAVBAR -->
-        <header>
-            <nav class="navbar">
-                <a class="logo" href="home_page.html">
-                    <img src="../assets/mdc_logo_small.svg" alt="mdc_logo_small" width="50px" height="50px">
+        <header role="banner">
+            <nav class="navbar" role="navigation" aria-label="Primary Navigation">
+                <a class="logo" href="home_page.html" aria-label="Mantsani Digital Creative Home">
+                    <img src="../assets/mdc_logo_small.svg" alt="Mantsani Digital Creative logo" width="50px" height="50px">
                     <div class="namelogo">
                         <h1 id="shortlogo">MDC</h1>
                         <p id="longlogo">Mantsani Digital Creative</p>
                     </div>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="home_page.html">Home</a></li>
-                    <li><a href="insight.html">Insight</a></li>
-                    <li><a href="art-wall.html">Art Wall</a></li>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a role="menuitem" href="home_page.html">Home</a></li>
+                    <li role="none"><a role="menuitem" href="insight.html">Insight</a></li>
+                    <li role="none"><a role="menuitem" href="art-wall.html">Art Wall</a></li>
                 </ul>
-                <div class="toggle_btn">
+                <div class="toggle_btn" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </nav>
-            <div class="dropdownmenu">
-                <li><a href="home_page.html">Home</a></li>
-                <li><a href="insight.html">Insight</a></li>
-                <li><a href="art-wall.html">Art Wall</a></li>
+            <div class="dropdownmenu" role="menu" aria-label="Mobile Navigation Menu">
+                <li role="none"><a role="menuitem" href="home_page.html">Home</a></li>
+                <li role="none"><a role="menuitem" href="insight.html">Insight</a></li>
+                <li role="none"><a role="menuitem" href="art-wall.html">Art Wall</a></li>
             </div>
         </header>
         <!-- END NAVBAR -->
         
         <!-- MAINCONTENT -->
-        <div class="main-container">
+        <main id="maincontent" class="main-container">
             <div class="main-content left">
                 <h1 class="h1contentleft">MDC</h1>
                 <p class="pcontentleft">This is the main content area.</p>
             </div>
             <div class="main-content right">
-                <img class="imagemain" src="../assets/mdc_logo_big.svg" alt="MDC" width="70%">
+                <img class="imagemain" src="../assets/mdc_logo_big.svg" alt="Mantsani Digital Creative main logo" width="70%">
             </div>
-            <ol class="bar">
-                <li class="active" data-slide="1">
+            <ol class="bar" role="tablist" aria-label="Main content slides">
+                <li class="active" data-slide="1" role="tab" aria-selected="true" tabindex="0" aria-controls="slide1">
                     <hr class="timer">
                 </li>
-                <li class="" data-slide="2">
+                <li class="" data-slide="2" role="tab" aria-selected="false" tabindex="-1" aria-controls="slide2">
                     <hr class="timer">
                 </li>
             </ol>
-        </div>
+        </main>
         <!-- END MAINCONTENT -->
         
         <!-- EXPLANATION -->
-        <div class="explanation">
+        <section class="explanation" aria-label="Explanation section">
             <div class="main-explanation">
-                <div class="aboutmdc">
-                    <h1>Tentang MDC</h1>
+                <div class="aboutmdc" role="region" aria-labelledby="aboutmdc-title">
+                    <h2 id="aboutmdc-title">Tentang MDC</h2>
                 </div>
-                <div class="mdcrobot">
-                    <img class="imagemain" src="../assets/mozi_logo.svg" alt="MDC" width="100%">
+                <div class="mdcrobot" role="region" aria-label="MDC robot logo">
+                    <img class="imagemain" src="../assets/mozi_logo.svg" alt="Mantsani Digital Creative robot logo" width="100%">
                 </div>
-                <div class="lookart">
-                    <h1>Lihat Karya</h1>
+                <div class="lookart" role="region" aria-labelledby="lookart-title">
+                    <h2 id="lookart-title">Lihat Karya</h2>
                 </div>
             </div>
             <div class="containercurvebox">
                 <div class="curvebox"></div>
             </div>
-        </div>
-        <div class="swiper">
+        </section>
+        <section class="swiper" aria-label="Creative categories slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide fotografi">
-                    <h2>FOTOGRAFI</h2>
+                <div class="swiper-slide fotografi" id="slide1" role="tabpanel" aria-labelledby="slide1-tab">
+                    <h3>FOTOGRAFI</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
                 </div>
-                <div class="swiper-slide videografi">
-                    <h2>VIDEOGRAFI</h2>
+                <div class="swiper-slide videografi" id="slide2" role="tabpanel" aria-labelledby="slide2-tab">
+                    <h3>VIDEOGRAFI</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
                 </div>
-                <div class="swiper-slide desain">
-                    <h2>DESAIN</h2>
+                <div class="swiper-slide desain" id="slide3" role="tabpanel" aria-labelledby="slide3-tab">
+                    <h3>DESAIN</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
                 </div>
-                <div class="swiper-slide program">
-                    <h2>PROGRAM</h2>
+                <div class="swiper-slide program" id="slide4" role="tabpanel" aria-labelledby="slide4-tab">
+                    <h3>PROGRAM</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium ut odit repudiandae explicabo fuga</p>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
             <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
-        </div>
-        <div class="containersub">
-            <img src="../assets/Component 1.svg" alt="program" class="sub-program" width="316.25px">
-            <img src="../assets/Component 2.svg" alt="" class="sub-desain" width="316.25px">
-            <img src="../assets/Component 3.svg" alt="" class="sub-fotografi" width="316.25px">
-            <img src="../assets/Component 4.svg" alt="" class="sub-videografi" width="316.25px">
-        </div>
+        </section>
+        <section class="containersub" aria-label="Creative category icons">
+            <div class="wrappersub">
+                <div class="sub-program logosub">
+                    <img src="../assets/Program.svg" alt="program icon" width="100%">
+                    <h1>SUB PROGRAM</h1>
+                </div>
+                <div class="sub-desain logosub">
+                    <img src="../assets/Desain.svg" alt="design icon" width="100%">
+                    <h1>SUB DESAIN</h1>
+                </div>
+                <div class="sub-fotografi logosub">
+                    <img src="../assets/Fotografi.svg" alt="photography icon" width="100%">
+                    <h1>SUB FOTOGRAFI</h1>
+                </div>
+                <div class="sub-videografi logosub">
+                    <img src="../assets/Video.svg" alt="videography icon" width="100%">
+                    <h1>SUB VIDEOGRAFI</h1>
+                </div>
+            </div>
+        </section>
         <!-- END EXPLANATION -->
         <!-- FOOTER -->
-        <footer>
+        <footer role="contentinfo">
             <div class="footer-content">
                 <div class="footer-left">
                     <div class="footerlogo">

@@ -82,12 +82,16 @@ let interval = setInterval(() => {
         }
         changeslide();
     }
-    document.querySelector("li.active hr").style.width = time/2 + "%"
 }, 150);
+
+function repeater() {
+    document.querySelector("li.active hr").style.width = time/2 + "%"
+    setTimeout(repeater, 0.1);
+}
+repeater();
 
 document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.swiper', {
-        loop: true,
         spaceBetween: 30,
         pagination: {
             el: '.swiper-pagination',
@@ -111,39 +115,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// SLIDE FUNCTION
-// const leftArrow = document.querySelector('.fa-angle-left');
-// const rightArrow = document.querySelector('.fa-angle-right');
-
-
-// // DRAGGABLE
-// const cardslider = document.querySelector('.card-slider');
-// const firstImg = cardslider.querySelectorAll('.card')[0];
-// const arrowicons = document.querySelectorAll('.card-wrapper i');
-
-// let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
-
-// const showhideicons = () => {
-//     const scrollWidth = cardslider.scrollWidth - cardslider.clientWidth;
-// };
-
-// arrowicons.forEach(icon => {
-//     icon.addEventListener('click', () => {
-//         const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
-//         cardslider.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
-//         slide = icon.id === "left" ? 1 : 2;
-//         setTimeout(showhideicons, 60);
-//     });
-// });
-
-// const autoSlide = () => {
-//     const firstImgWidth = firstImg.clientWidth; // Adjust for margin/padding if needed
-//     positionDiff = Math.abs(positionDiff);
-//     const valDifference = firstImgWidth - positionDiff;
-
-//     if (cardslider.scrollLeft > prevScrollLeft) {
-//         cardslider.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-//     } else {
-//         cardslider.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-//     }
-// };
