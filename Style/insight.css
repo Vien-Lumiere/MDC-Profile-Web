@@ -5,8 +5,8 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  width: 100%;
-  color-scheme: dark;
+  margin: 0;
+  background: #f0f0f0;
 }
 .logo {
   display: flex;
@@ -34,11 +34,32 @@ body {
 }
 
 /* header */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --colorfontnavbar: #ffffff;
+  --colorfont: #ffda37;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: 100%;
+  color-scheme: dark;
+}
+
+/* ========== HEADER ========== */
 header {
-  position: relative;
+  top: 0;
+  position: sticky;
   padding: 0 1rem;
-  background-color: #444A95;
+  background-color: #444a95;
   color: white;
+  z-index: 100;
 }
 a {
   text-decoration: none;
@@ -48,7 +69,9 @@ li {
   list-style: none;
 }
 
-/* navbar */
+
+
+/* ========== NAVBAR ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -61,37 +84,253 @@ li {
   align-items: center;
 }
 .navbar li {
-  display: inline-block;
+  display: flex;
   line-height: 50px;
   width: 135px;
   text-align: center;
+  justify-content: center;
 }
-
-.navbar .logo{
+.navbar .logo {
   cursor: pointer;
   display: flex;
-
+}
+.logo {
+  display: flex;
+  flex-direction: rows;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+  text-wrap: nowrap;
+  color: var(--colorfontnavbar);
+  align-items: center;
+  height: 50px;
+  gap: 0.6rem;
+}
+.namelogo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.namelogo #shortlogo {
+  font-size: 30px;
+  line-height: 23px;
+}
+.namelogo #longlogo {
+  font-size: 15px;
+  line-height: 15px;
 }
 .navbar li a {
   text-decoration: none;
   font-size: 1.2rem;
-  color: #FFDA37;
+  color: var(--colorfontnavbar);
   font-weight: 500;
   text-wrap: nowrap;
   font-family: "Inter", sans-serif;
 }
+.navbar li a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--colorfontnavbar);
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+  margin: 0 auto;
+  position: relative;
+  bottom: 12px;
+}
+.navbar li a:hover::after {
+  width: 100%;
+}
 
 .navbar li:nth-child(n-1) {
-  border-left: 2px solid #FFDA37;
+  border-left: 2px solid var(--colorfontnavbar);
 }
 .navbar .toggle_btn {
   display: none;
-  scale: 1.5;
-  align-self: center;
-  background-color: transparent;
-  border: none;
+  width: 35px;
+  height: 25px;
+  position: relative;
+  transform: rotate(0);
+  transition: .3s ease-in-out;
   cursor: pointer;
-  font: 800;
 }
 
-  
+.toggle_btn span{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--colorfontnavbar);
+  border-radius: 7px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0);
+  transition: .3s ease-in-out;
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 0;
+  transform-origin: left center;
+}
+.toggle_btn span:nth-child(2) {
+  top: 10px;
+  transform-origin: left center;
+}
+.toggle_btn span:nth-child(3) {
+  top: 20px;
+  transform-origin: left center;
+}
+
+.toggle_btn.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: -3px;
+  left: 7px;
+}
+.toggle_btn.active span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+.toggle_btn.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 7px;
+}
+
+/* ========== END NAVBAR ========== */
+
+
+.tandatanya {
+  position: absolute;
+  top: 51%;
+  left: 31%;
+  transform: translate(-50%, -400%);
+  width: 300px;
+  height: 35px;
+  border-radius: 30px;
+  background: #444A95;
+}
+
+.vector1 {
+  height: 15px;
+  width: 15px;
+  background: transparent;
+  position: relative;
+  top: 7px;
+  left: 260px;
+  border-radius: 50%;
+  border: 3px solid rgb(255, 255, 255);
+
+}
+
+.vector2 {
+  height: 9px;
+  width: 3px;
+  background: white;
+  position: relative;
+  left: 272px;
+  top: 4px;
+  transform: rotate(-30deg);
+}
+
+.textsearch {
+  position: relative;
+  font-size: 20px;
+  bottom: 20px;
+  left: 20px;
+  color: #ded7d7;
+}
+
+.sub1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 590px;
+  height: 300px;
+  border-radius: 20px 0px 20px 20px;
+  background: #444A95;
+  box-shadow: 20px 20px 60px #bebebe,
+              -20px -20px 60px #ffffff;
+}
+
+.pilihan {
+  position: absolute;
+  top: 37%;
+  left: 72.1580%;
+  transform: translate(-50%, -80%);
+  width: 250.0124px;
+  height: 52px;
+  border-radius: 30px 20px 0px 0px;
+  background: #444A95;
+}
+
+.logo {
+  height:100%;
+  position: relative;
+}
+
+.logo2 {
+  height: 40px;
+  width: 300px;
+  background: #727eec;
+  border-radius: 10px;
+  position: relative;
+  bottom: 285px;
+  left: 280px;
+}
+
+.adalah {
+  position: relative;
+  font-size: 23px;
+  top: 5px;
+  left: 12px;
+  color: white;
+}
+
+.teksnya {
+  height: 100px;
+  width: 240px;
+  position: relative;
+  bottom: 265px;
+  left: 300px;
+}
+
+.Tfoto {
+  height: 34px;
+  width: 34px;
+  position: relative;
+  background-color: #b93228;
+  top: 13px;
+  left: 17px;
+  border-radius: 50%;
+}
+
+.Tvideo {
+  height: 34px;
+  width: 34px;
+  position: relative;
+  background-color: #e7bd40;
+  bottom: 21px;
+  left: 70px;
+  border-radius: 50%;
+}
+
+.Tdesain {
+  height: 34px;
+  width: 34px;
+  position: relative;
+  background-color: #294172;
+  bottom: 55px;
+  left: 123px;
+  border-radius: 50%;
+}
+
+.Tprogram {
+  height: 34px;
+  width: 34px;
+  position: relative;
+  background-color: #245415;
+  bottom: 90px;
+  left: 176px;
+  border-radius: 50%;
+}
