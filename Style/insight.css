@@ -203,11 +203,13 @@ li {
   position: absolute;
   top: 51%;
   left: 31%;
-  transform: translate(-50%, -400%);
+  transform: translate(-60%, -580%);
   width: 300px;
   height: 35px;
   border-radius: 30px;
   background: #444A95;
+  box-shadow: 20px 20px 60px #bebebe,
+              -20px -20px 60px #ffffff;
 }
 
 .vector1 {
@@ -257,9 +259,9 @@ li {
   position: absolute;
   top: 37%;
   left: 72.1580%;
-  transform: translate(-50%, -80%);
-  width: 250.0124px;
-  height: 52px;
+  transform: translate(-34%, -280%);
+  width: 248px;
+  height: 60px;
   border-radius: 30px 20px 0px 0px;
   background: #444A95;
 }
@@ -300,9 +302,45 @@ li {
   width: 34px;
   position: relative;
   background-color: #b93228;
-  top: 13px;
+  top: 16px;
   left: 17px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.4s ease-out, filter 0.4s ease-out;
+  will-change: transform;
+}
+
+.Tfoto img {
+  position: relative;
+  bottom: 1px;
+  width: 23px;
+  height: 25px;
+  object-fit: contain;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  will-change: transform;
+}
+
+.Tfoto:hover {
+  transform: scale(1.4);
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.Tvideo:hover {
+  transform: scale(1.4);
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.Tdesain:hover {
+  transform: scale(1.4);
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.Tprogram:hover {
+  transform: scale(1.4);
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .Tvideo {
@@ -310,9 +348,49 @@ li {
   width: 34px;
   position: relative;
   background-color: #e7bd40;
-  bottom: 21px;
+  top: -18px;
   left: 70px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.4s ease-out, filter 0.4s ease-out;
+  will-change: transform;
+}
+
+.Tvideo img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  will-change: transform;
+}
+
+
+
+.Tprogram {
+  height: 34px;
+  width: 34px;
+  position: relative;
+  background-color: #245415;
+  top: -86px;
+  left: 123px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.4s ease-out, filter 0.4s ease-out;
+  will-change: transform;
+}
+
+.Tprogram img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  will-change: transform;
 }
 
 .Tdesain {
@@ -320,17 +398,21 @@ li {
   width: 34px;
   position: relative;
   background-color: #294172;
-  bottom: 55px;
-  left: 123px;
-  border-radius: 50%;
-}
-
-.Tprogram {
-  height: 34px;
-  width: 34px;
-  position: relative;
-  background-color: #245415;
-  bottom: 90px;
+  top: -53px;
   left: 176px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.4s ease-out, filter 0.4s ease-out;
+  will-change: transform;
+}
+
+.Tdesain img {
+  width: 20px;
+  height: 25px;
+  object-fit: contain;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  will-change: transform;
 }
