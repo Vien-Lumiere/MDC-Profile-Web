@@ -23,6 +23,7 @@ body {
   justify-content: center;
 }
 
+
 .namelogo #shortlogo {
   font-size: 30px;
   line-height: 23px;
@@ -289,6 +290,12 @@ li {
   color: white;
 }
 
+.submdc {
+  position: relative;
+  bottom: 360px;
+  right: 9px;
+}
+
 .teksnya {
   height: 100px;
   width: 240px;
@@ -415,4 +422,22 @@ li {
   object-fit: contain;
   transition: transform 0.3s ease-out, filter 0.3s ease-out;
   will-change: transform;
+}
+
+.all {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.97);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.all.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 1;
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      margin-bottom: 20px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </nav>
+
+  <div id="home" class="page active">
+    <h2>Home</h2>
+    <p>Ini adalah halaman Home.</p>
+  </div>
+
+  <div id="about" class="page">
+    <h2>About</h2>
+    <p>Ini adalah halaman About kami.</p>
+  </div>
+
+  <div id="contact" class="page">
+    <h2>Contact</h2>
+    <p>Hubungi kami melalui form di bawah ini.</p>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
