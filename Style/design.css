@@ -74,9 +74,20 @@
 .textsearch3 {
   position: relative;
   font-size: 20px;
-  bottom: 16px;
+  bottom: 19px;
   left: 20px;
   color: white;
+}
+
+.III {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  font-size: 15.4px;
+  bottom: -15px;
+  left: 14px;
+  color: white;
+  text-align: justify;
 }
 
 .submdc3 {

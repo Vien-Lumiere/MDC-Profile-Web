@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --colorfontnavbar: #ffffff;
+  --colorfont: #ffda37;
+}
+
 * * {
   margin: 0;
   padding: 0;
@@ -35,11 +41,7 @@ body {
 }
 
 /* header */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-:root {
-  --colorfontnavbar: #ffffff;
-  --colorfont: #ffda37;
-}
+
 
 
 * {
@@ -240,7 +242,7 @@ li {
 .textsearch {
   position: relative;
   font-size: 20px;
-  bottom: 20px;
+  bottom: 24px;
   left: 20px;
   color: #ded7d7;
 }
@@ -274,6 +276,84 @@ li {
   position: relative;
 }
 
+.slideshow-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow-track {
+  display: flex;
+  width: calc(300px * 5); 
+  animation: slideShow 25s infinite ease-in-out;
+}
+
+.slideshow-track img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 1s ease;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to right,
+    rgba(68, 74, 149, 0) 0%,
+    rgba(68, 74, 149, 0.4) 50%,
+    #444A95 100%);
+  pointer-events: none;
+  border-radius: 20 20px 20px ;
+}
+
+/* Animasi geser */
+@keyframes slideShow {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+
+  25% { transform: translateX(-300px); }
+  40% { transform: translateX(-300px); }
+
+  45% { transform: translateX(-600px); }
+  60% { transform: translateX(-600px); }
+
+  65% { transform: translateX(-900px); }
+  80% { transform: translateX(-900px); }
+
+  85% { transform: translateX(-1200px); }
+  100% { transform: translateX(-1200px); }
+}
+
+.narasi {
+  position: absolute;
+  top: 33%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 100px;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.logo1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+}
+
 .logo2 {
   height: 40px;
   width: 300px;
@@ -286,7 +366,7 @@ li {
 
 .adalah {
   position: relative;
-  font-size: 23px;
+  font-size: 21px;
   top: 5px;
   left: 12px;
   color: white;
