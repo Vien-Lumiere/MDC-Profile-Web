@@ -1,6 +1,6 @@
 
 
-.sub2 {
+.sub3 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -8,12 +8,12 @@
   width: 590px;
   height: 300px;
   border-radius: 20px 0px 20px 20px;
-  background: #e25046;
+  background: #434b96;
   box-shadow: 20px 20px 60px #bebebe,
               -20px -20px 60px #ffffff;
 }
 
-.kotak {
+.kotak3 {
     position: absolute;
     top: 33%;
     left: 69%;
@@ -21,12 +21,12 @@
     width: 340px;
     height: 260px;
     border-radius: 20px 20px 20px 20px;
-    background: #b93228;
+    background: #2b3175;
     border: 2px solid white;
     box-shadow: 0px 13px 20px rgba(0, 0, 0, 0.3);
 }
 
-.pilihan2 {
+.pilihan3 {
   position: absolute;
   top: 37%;
   left: 58.6%;
@@ -34,11 +34,11 @@
   width: 370px;
   height: 60px;
   border-radius: 30px 20px 0px 0px;
-  background: #e25046;
+  background: #434b96;
 
 }
 
-.tandatanya2 {
+.tandatanya3 {
   position: absolute;
   top: 410%;
   left: 60%;
@@ -46,10 +46,10 @@
   width: 320px;
   height: 40px;
   border-radius: 30px;
-  background: #b93228;
+  background: #2b3175;
 }
 
-.vector12 {
+.vector13 {
   height: 15px;
   width: 15px;
   background: transparent;
@@ -61,7 +61,7 @@
 
 }
 
-.vector22 {
+.vector23 {
   height: 9px;
   width: 3px;
   background: white;
@@ -71,7 +71,7 @@
   transform: rotate(-30deg);
 }
 
-.textsearch2 {
+.textsearch3 {
   position: relative;
   font-size: 20px;
   bottom: 16px;
@@ -79,18 +79,18 @@
   color: white;
 }
 
-.submdc {
+.submdc3 {
   position: relative;
   bottom: 360px;
   right: 9px;
 }
 
-.Tfoto2 {
+.Tfoto3 {
   height: 34px;
   width: 34px;
   position: relative;
   background-color: #b93228;
-  top: 6px;
+  top: 17px;
   left: 17px;
   border-radius: 50%;
   display: flex;
@@ -103,7 +103,7 @@
   will-change: transform, filter;
 }
 
-.Tfoto2 img {
+.Tfoto3 img {
   position: relative;
   bottom: 1px;
   width: 23px;
@@ -114,24 +114,24 @@
   will-change: transform;
 }
 
-
-
-.Tvideo2:hover {
+.Tfoto3:hover {
   transform: translateY(-10px);
   filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.4));
 }
 
-.Tdesain2:hover {
+
+.Tvideo3:hover {
   transform: translateY(-10px);
   filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.4));
 }
 
-.Tprogram2:hover {
+
+.Tprogram3:hover {
   transform: translateY(-10px);
   filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.4));
 }
 
-.Tvideo2 {
+.Tvideo3 {
   height: 34px;
   width: 34px;
   position: relative;
@@ -149,7 +149,7 @@
   will-change: transform, filter;
 }
 
-.Tvideo2 img {
+.Tvideo3 img {
   width: 25px;
   height: 25px;
   object-fit: contain;
@@ -158,7 +158,7 @@
   will-change: transform;
 }
 
-.Tprogram2 {
+.Tprogram3 {
   height: 34px;
   width: 34px;
   position: relative;
@@ -176,7 +176,7 @@
   will-change: transform, filter;
 }
 
-.Tprogram2 img {
+.Tprogram3 img {
   width: 25px;
   height: 25px;
   object-fit: contain;
@@ -185,12 +185,12 @@
   will-change: transform;
 }
 
-.Tdesain2 {
+.Tdesain3 {
   height: 34px;
   width: 34px;
   position: relative;
   background-color: #294172;
-  top: -53px;
+  top: -65px;
   left: 176px;
   border-radius: 50%;
   display: flex;
@@ -203,7 +203,7 @@
   will-change: transform, filter;
 }
 
-.Tdesain2 img {
+.Tdesain3 img {
   width: 20px;
   height: 25px;
   object-fit: contain;

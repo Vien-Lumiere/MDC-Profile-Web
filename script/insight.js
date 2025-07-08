@@ -15,3 +15,10 @@ function showPage(targetId) {
     next.classList.add('active');
   }, 20); // kecilin delay biar langsung masuk tapi tetap detect transition
 }
+
+function showPage(pageId) {
+  document.querySelectorAll('.all').forEach(el => {
+    el.classList.remove('active');
+  });
+  document.getElementById(pageId).classList.add('active');
+}
